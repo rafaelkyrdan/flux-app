@@ -24,10 +24,13 @@ const CartAPI = {
 		}
 	},
 	cartTotals (qty = 0, total = 0) {
-		this.cartItems.forEach(cartItem => {
-			qty += carItem.qty;
-			total += carItem.qty * cartItem.cost;
-		});
+
+		this.cartItems.forEach(item => {
+			console.log(item);
+			qty += item.qty;
+			total += item.qty * item.cost;
+			console.log(qty, total);
+		});		
 
 		return {qty, total};
 	},
