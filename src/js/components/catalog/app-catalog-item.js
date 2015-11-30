@@ -1,28 +1,16 @@
 import React from 'react';
+import AppStore from '../../stores/app-store';
 import AppActions from '../../actions/app-actions';
 import CartButton from '../cart/app-cart-button';
+import StoreWatchMixin from '../../mixins/StoreWatchMixin';
 import { Link } from 'react-router';
 
-/*
-
-export default (props) => {
-	return (
-		<div className="col-xs-6 col-sm-4 col-md-3">
-			<h4>{props.item.title}</h4>
-			<img src="http://placehold.it/250x250" width="100%" className="img-responsive"/>
-			<p>{props.item.summary}</p>
-			<p> $ {props.item.cost} <span className="text-success">
-				{props.item.qty && `(${props.item.qty} in the cart)`}</span>
-			</p>
-			<CartButton handler={ AppActions.addItem.bind(null, props.item)}
-						txt="Add to Cart" />
-		</div>
-	);
+function getCatalogItem(props){
+	let item = AppStore.getCatalog().find( ({id}) => id === props.id);
+	return {item};
 }
 
-*/
-
-export default (props) => {
+const CatalogItem = (props) => {
 
 	let itemStyle = {
 		borderBottom:'1px solid #ccc',
@@ -45,3 +33,7 @@ export default (props) => {
 		</div>
 	);
 }
+
+export default StoreWatchMixin( CatalogItem, getCatalogItem );
+
+

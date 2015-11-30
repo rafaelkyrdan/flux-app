@@ -16,9 +16,10 @@ class Catalog extends React.Component{
 	}
 
 	render(){
+
 		let items = this.state.items.map(item => {
 
-			return <CatalogItem key={item.id} item={item}/>
+			return <CatalogItem key={item.id} id={item.id}/>
 		});
 
 		return (<div className="row">{items}</div>);

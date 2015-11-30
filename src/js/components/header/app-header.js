@@ -24,7 +24,7 @@ const Header = (props) => {
 				    </div>				    
 					<div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<div className="av navbar-nav navbar-right">
-							<span className="text-success">{`${props.qty}  in cart `}</span>
+							<span className="text-success">{`${props.qty} items in cart. `}</span>
 							<span className="text-success">{` Total: $ ${props.total} `}</span>								
 							<Link className="btn btn-success" to="/cart">Go to cart</Link>
 						</div>					  
