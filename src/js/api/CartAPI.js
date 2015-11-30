@@ -26,10 +26,8 @@ const CartAPI = {
 	cartTotals (qty = 0, total = 0) {
 
 		this.cartItems.forEach(item => {
-			console.log(item);
 			qty += item.qty;
 			total += item.qty * item.cost;
-			console.log(qty, total);
 		});		
 
 		return {qty, total};
